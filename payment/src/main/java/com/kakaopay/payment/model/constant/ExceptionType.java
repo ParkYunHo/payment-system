@@ -25,7 +25,7 @@ public enum ExceptionType {
 	CRT_TRANSACTIONID_ERROR("402", "트랜잭션번호 생성에 실패하였습니다."),
 
 	CIPHER_ENCRYPT_ERROR("501", "카드정보를 암호화하는데 실패하였습니다."),
-	CIPHER_DECRYPT_ERROR("501", "카드정보를 복호화하는데 실패하였습니다."),
+	CIPHER_DECRYPT_ERROR("502", "카드정보를 복호화하는데 실패하였습니다."),
 	
 	SEND_TRANSACTION_ERROR("601", "카드사에 정보를 전송하는데 실패하였습니다.");
 	
