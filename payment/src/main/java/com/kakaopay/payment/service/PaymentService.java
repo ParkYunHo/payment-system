@@ -8,6 +8,7 @@ import com.kakaopay.payment.config.exception.CustomException;
 import com.kakaopay.payment.model.constant.PaymentType;
 import com.kakaopay.payment.model.dto.RequestDTO;
 import com.kakaopay.payment.model.dto.ResponseDTO;
+import com.kakaopay.payment.model.dto.ResponseDTO.CardInfoDTO;
 import com.kakaopay.payment.model.entity.Payment;
 import com.kakaopay.payment.provider.CardInfoProvider;
 import com.kakaopay.payment.provider.IDProvider;
@@ -62,7 +63,6 @@ public class PaymentService {
 		}finally {
 			lockProvider.unlock(paymentKey);
 		}
-		
 	}
 	
 
@@ -119,7 +119,12 @@ public class PaymentService {
 		ResponseDTO.PaymentInfoDTO response = new ResponseDTO.PaymentInfoDTO();
 		response.setMngId(payment.getMngId());
 		response.setStatus(payment.getStatus());
-		response.setCardInfo(cardInfoProvider.decrypt(payment.getCardInfo()));
+		
+		// 카드번호 마스킹처리
+		CardInfoDTO cardInfo = cardInfoProvider.decrypt(payment.getCardInfo());
+		cardInfo.setCardNo(cardInfoProvider.maskingCardNo(cardInfo.getCardNo()));
+		
+		response.setCardInfo(cardInfo);
 		response.setPriceInfo(
 				mapperProvider.getMapper().map(payment, ResponseDTO.PriceInfoDTO.class)
 			);

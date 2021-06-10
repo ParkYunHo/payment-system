@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -68,12 +69,23 @@ public class CardInfoProvider {
 			String splits[] = new String(cipher.doFinal(encryptBytes), charset).split(separator);
 			
 			ResponseDTO.CardInfoDTO cardInfo = new ResponseDTO.CardInfoDTO();
-			cardInfo.setCardNo(Long.parseLong(splits[0]));
+			cardInfo.setCardNo(splits[0]);
 			cardInfo.setExpiryDate(Long.parseLong(splits[1]));
 			cardInfo.setCvc(Long.parseLong(splits[2]));
 			return cardInfo;
 		}catch(Exception e) {
 			throw new CustomException(ExceptionType.CIPHER_DECRYPT_ERROR);
 		}
+	}
+	
+	public String maskingCardNo(String cardNo) {
+		 int start = 6;
+	     int end = cardNo.length()-3;
+	        
+		return new StringBuilder()
+                .append(StringUtils.repeat('*', 6))
+                .append(StringUtils.substring(cardNo, start, end))
+                .append(StringUtils.repeat('*', 3))
+                .toString();
 	}
 }

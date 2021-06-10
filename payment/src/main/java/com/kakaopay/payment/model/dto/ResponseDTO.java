@@ -28,7 +28,7 @@ public class ResponseDTO {
 	 */
 	@Data
 	public static class CardInfoDTO {
-		private Long cardNo;
+		private String cardNo;
 		private Long expiryDate;
 		private Long cvc;
 	}
