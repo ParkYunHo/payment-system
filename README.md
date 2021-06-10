@@ -1,10 +1,234 @@
-# ì¹´ë“œê²°ì œ API ì‹œìŠ¤í…œ
+# Ä«µå°áÁ¦ API ½Ã½ºÅÛ
 
-ê²°ì œìš”ì²­ì„ ë°›ì•„ ì¹´ë“œì‚¬ì™€ í†µì‹ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•˜ëŠ” Restful API ê²°ì œì‹œìŠ¤í…œ 
+°áÁ¦¿äÃ»À» ¹Þ¾Æ Ä«µå»ç¿Í Åë½ÅÇÏ´Â ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÏ´Â Restful API °áÁ¦½Ã½ºÅÛ 
 
-## ëª©ì°¨
+## ¸ñÀÚ
 
-* [ê°œë°œí™˜ê²½](#ê°œë°œí™˜ê²½)
-* [í…Œì´ë¸” ì„¤ê³„](#í…Œì´ë¸”ì„¤ê³„)
-* [ë¬¸ì œí•´ê²° ì „ëžµ](#ë¬¸ì œí•´ê²°ì „ëžµ)
-* [ë¹Œë“œ ë°©ë²•](#ë¹Œë“œë°©ë²•)
+* [°³¹ßÈ¯°æ](#°³¹ßÈ¯°æ)
+* [Å×ÀÌºí ¼³°è](#Å×ÀÌºí¼³°è)
+* [ºôµå ¹æ¹ý](#ºôµå¹æ¹ý)
+* [¹®Á¦ÇØ°á Àü·«](#¹®Á¦ÇØ°áÀü·«)
+* [¹æ¾îÄÚµå Áõ¸í](#¹æ¾îÄÚµåÁõ¸í)
+* [´ÜÀ§ Å×½ºÆ®](#´ÜÀ§Å×½ºÆ®)
+* [¿¡·¯ÄÚµå Á¤ÀÇ](#¿¡·¯ÄÚµåÁ¤ÀÇ)
+
+## °³¹ßÈ¯°æ
+
+1. BackEnd
+    * Spring boot
+     * Spring °³¹ßÈ¯°æ ±¸Ãà½Ã°£À» ÁÙÀÌ°í Embedded TomcatÀ» È°¿ëÇÏ±â À§ÇÑ ¿ëµµ
+    * JPA/Hibernate
+     * ORM±â¼úÀ» È°¿ëÇÏ¿© DBÇÚµé¸µ ÆíÀÇ¼ºÀ» À§ÇØ »ç¿ë
+    * Maven
+     * Build ¹× ¶óÀÌºê·¯¸® °ü¸® ¿ëµµ
+
+2. DB
+    * H2
+     * In-memoery¹æ½ÄÀÇ °³¹ß°è È¯°æ ±¸Ãà ¿ëµµ
+    * Redis
+     * RedisÀÇ ¿øÀÚÀû Æ¯¼ºÀ» °®´Â ÇÔ¼ö(setIfAbsent)¸¦ ÀÌ¿ëÇÏ¿© ºÐ»êLOCKÀ» »ç¿ëÇÏ±â À§ÇÑ ¿ëµµ
+
+3. IDE
+    * SpringToolSuite4 : Spring°³¹ß È¯°æ 
+    * Insomnia : API Å×½ºÆ® ¿ëµµ
+
+
+## Å×ÀÌºí&nbsp;¼³°è
+
+1. °áÁ¦Á¤º¸ Å×ÀÌºí
+```
+    CREATE TABLE PAYMENT
+    (
+    	MNG_ID               VARCHAR2(255) NOT NULL,
+    	STATUS               VARCHAR2(255) NULL,
+    	PRICE                BIGINT NULL,
+    	VAT                  BIGINT NULL,
+    	INSTALL_MONTHS       BIGINT NULL,
+    	ENCRYPT_CARD_INFO    VARCHAR(255) NULL,
+      PRIMARY KEY (MNG_ID)
+    );
+    COMMENT ON TABLE PAYMENT IS '°áÁ¦Á¤º¸';
+    COMMENT ON COLUMN PAYMENT.MNG_ID IS '°ü¸®¹øÈ£';
+    COMMENT ON COLUMN PAYMENT.STATUS IS '°áÁ¦/Ãë¼Ò »óÅÂ';
+    COMMENT ON COLUMN PAYMENT.PRICE IS '°áÁ¦/Ãë¼Ò ±Ý¾×';
+    COMMENT ON COLUMN PAYMENT.VAT IS '°áÁ¦/Ãë¼Ò ºÎ°¡°¡Ä¡¼¼';
+    COMMENT ON COLUMN PAYMENT.INSTALL_MONTHS IS 'ÇÒºÎ°³¿ù¼ö';
+    COMMENT ON COLUMN PAYMENT.ENCRYPT_CARD_INFO IS '¾ÏÈ£È­µÈ Ä«µåÁ¤º¸';
+```
+
+2. Ä«µå»ç Å×ÀÌºí
+```
+    CREATE TABLE CARD_COMPANY
+    (
+    	TRANSACTION_ID               VARCHAR(500) NOT NULL ,
+      PRIMARY KEY (TRANSACTION_ID)
+    );
+    COMMENT ON TABLE CARD_COMPANY IS 'Ä«µå»ç';
+    COMMENT ON COLUMN AD_DOC_INFO.TRANSACTION_ID IS 'Æ®·£Àè¼Ç ID';
+```
+
+
+## ºôµå&nbsp;¹æ¹ý
+
+1. Command Line ºôµå
+    ```
+        $gradlew build
+    ```  
+
+2. SpringToolSuite4 ºôµå
+    ```
+        Application ½ÇÇà
+    ```  
+ 
+## ¹®Á¦ÇØ°á&nbsp;Àü·«
+1. °áÁ¦
+2. °áÁ¦Ãë¼Ò
+3. °áÁ¦Á¤º¸ Á¶È¸
+4. °øÅë±â´É
+
+
+## ¹æ¾îÄÚµå&nbsp;Áõ¸í
+### 1. µ¿½Ã¼º Á¦¾î¸¦ À§ÇÑ °øÅë±â´É
+* UniqueKey »ý¼º±â´É
+ * °áÁ¦ &emsp;&emsp;: &emsp;type : ```Payment``` &emsp;/&emsp;value : ```Ä«µå¹øÈ£```
+ * °áÁ¦Ãë¼Ò : &emsp;type : ```Cancel``` &emsp;/ &emsp;value : ```°ü¸®¹øÈ£```
+```
+String.format("%s::%s", type, value.toString());
+```
+
+* Æ®·£Àè¼Ç Lock
+ * setIfAbsent() ÇÔ¼ö¸¦ ÅëÇØ ÀÌ¹Ì UniqueKey°¡ µî·ÏµÇ¾ú´Ù¸é ¿¡·¯Á¤º¸ throw
+ * °áÁ¦/°áÁ¦Ãë¼Ò Æ®·£Àè¼Ç¿¡ ´ëÇÑ °íÀ¯Á¤º¸·Î UniqueKey¸¦ ±¸¼ºÇÏ±â ¶§¹®¿¡ ºÐ»êLock ±¸Çö °¡´É
+```
+ boolean isUnLocked = redisTemplate.opsForValue().setIfAbsent(uniqueKey, "LOCK", 1, TimeUnit.MINUTES);
+ if(isUnLocked == false)
+	 throw new CustomException(ExceptionType.LOCK_CANCEL_ERROR);
+```
+
+* Æ®·£Àè¼Ç Unlock
+ * Redis¿¡ µî·ÏÇÑ LockÁ¤º¸ »èÁ¦
+```
+redisTemplate.delete(uniqueKey);
+```
+
+### 2. ÇÏ³ªÀÇ Ä«µå¹øÈ£·Î µ¿½Ã¿¡ °áÁ¦½Ã ¹æ¾îÄÚµå
+ * ```getUniqueKey``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ UniqueKey¸¦ ¹ß±Þ¹Þ´Â´Ù.
+ * ```paymentLock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °áÁ¦Process ½ÃÀÛÀü LockÀ» °É¾îµÐ´Ù.
+```
+ paymentKey = lockProvider.getUniqueKey(PaymentType.PAYMENT, paymentInfo.getCardNo());
+ lockProvider.paymentLock(paymentKey);
+```
+ * °áÁ¦ Process°¡ ¿Ï·áµÇ¸é ```unlock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ  °É¾îµÎ¾ú´ø LockÀ» ÇØÁ¦ÇÑ´Ù.
+```
+ lockProvider.unlock(paymentKey);
+```
+
+### 3. °áÁ¦ ÇÑ °Ç¿¡ ´ëÇÑ ÀüÃ¼Ãë¼Ò(ºÎºÐÃë¼Ò)½Ã ¹æ¾îÄÚµå
+###### _ÀüÃ¼Ãë¼Ò¿Í ºÎºÐÃë¼Ò ±â´ÉÀ» ÇÏ³ªÀÇ ¸Þ¼­µå·Î ±¸ÇöÇÏ¿© º°µµÀÇ ±¸ºÐ¾øÀÌ ¹æ¾îÄÚµå ÀÛ¼º_
+ * ```getUniqueKey``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ UniqueKey¸¦ ¹ß±Þ¹Þ´Â´Ù.
+ * ```paymentLock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °áÁ¦Ãë¼Ò Process ½ÃÀÛÀü LockÀ» °É¾îµÐ´Ù.
+```
+ cancelKey = lockProvider.getUniqueKey(PaymentType.CANCEL, cancelInfo.getMngId());
+ lockProvider.cancelLock(cancelKey);
+```
+ * °áÁ¦Ãë¼Ò Process°¡ ¿Ï·áµÇ¸é ```unlock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °É¾îµÎ¾ú´ø LockÀ» ÇØÁ¦ÇÑ´Ù.
+```
+ lockProvider.unlock(cancelKey);
+```
+
+### 4. ¹æ¾îÄÚµå Áõ¸í
+ * Junit Test¸¦ ÅëÇØ ¹æ¾îÄÚµå¸¦ Áõ¸í
+ * Multi-Thread¸¦ »ý¼ºÇÏ¿© µ¿½Ã¿¡ °áÁ¦ ¶Ç´Â °áÁ¦Ãë¼Ò ¸Þ¼­µå¿¡ Á¢±ÙÇÏ¿© LOCK¿¡ ÀÇÇÑ ExceptionÀÌ ResponseµÇ´ÂÁö È®ÀÎ
+ * Multi-Thread ±¸¼º
+```
+Runnable thread = () -> {
+		try {
+			Object obj = super.paymentThreadTest(req);
+			
+			if(obj instanceof CustomException) {
+				CustomException exception = (CustomException)obj;
+				if(exception.getError() == ExceptionType.LOCK_PAYMENT_ERROR) errorList.add(exception.getError());
+			}
+		}catch(Throwable e) {}	
+	};
+CompletableFuture
+			.allOf(CompletableFuture.runAsync(thread), CompletableFuture.runAsync(thread))
+			.join();
+```
+
+
+## ´ÜÀ§&nbsp;Å×½ºÆ®
+* Junit5 ¹öÀü»ç¿ë
+* TestCaseº° ¼³¸í
+ * TestCase¿¡ ÇÊ¿äÇÑ °øÅëÁ¤º¸(Request Parameter, IDÁ¤º¸ µî) Á¦°ø
+```
+CommonTest.java
+```
+ * °áÁ¦, °áÁ¦Ãë¼Ò, °áÁ¦Á¤º¸ Á¶È¸ TestCase
+```
+PaymentTest.java
+```
+ * ¿¹¿Ü »óÈ²º° TestCase
+```
+ExceptionTest.java
+```
+ * µ¿½Ã¼ºÁ¦¾î TestCase
+```
+MultiThreadTest.java
+```
+
+
+## ¿¡·¯ÄÚµå&nbsp;Á¤ÀÇ
+1. ¿¡·¯»óÈ²½Ã Response Object
+```
+{
+        "timeStamp": YYYY-MM-DD HH-MM-SS,
+        "status": ¿¡·¯ÄÚµå,
+        "msg": ¿¡·¯¸Þ¼¼Áö
+}
+```
+
+2. ¿¡·¯ÄÚµå Á¤ÀÇ
+
+###### _º¸¾È»ó ¿¡·¯ÄÚµå´Â »ó¼¼È÷ Á¦°øÇÏÁö ¾Ê´Â °ÍÀÌ ¿øÄ¢ÀÌÁö¸¸ °áÁ¦½Ã½ºÅÛ »ó¿¡´Â »ó¼¼È÷ Ç¥Çö_
+
+* ¼­¹ö ³»ºÎ¿¡·¯
+```
+SERVER_ERROR            code: "001"     message: "¿¡·¯"
+```
+* Request Parameter ¿¡·¯
+```
+PARAM_NULL_ERROR        code: "101"     message: "ÇÊ¼ö ¿äÃ»Á¤º¸¸¦ ´©¶ôÇÏ¿´½À´Ï´Ù."
+PARAM_LENS_ERROR        code: "102"     message: "Çã¿ëµÈ ±æÀÌ¸¦ ¹þ¾î³µ½À´Ï´Ù."
+PARAM_DATE_ERROR        code: "103"     message: "³¯Â¥Çü½ÄÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù."
+PARAM_RANGE_ERROR       code: "104"     message: "Çã¿ëµÈ °ªÀÇ ¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù."
+PARAM_NOID_ERROR        code: "105"     message: "Á¸ÀçÇÏÁö ¾Ê´Â °ü¸®¹øÈ£ÀÔ´Ï´Ù."
+PARAM_NOPAY_ERROR       code: "106"     message: "°áÀçÁ¤º¸°¡ ¾ø´Â °ü¸®¹øÈ£ÀÔ´Ï´Ù."
+```
+* °¡°Ý °ËÁõ ¿¡·¯
+```
+PRICE_VATRANGE_ERROR        code: "201"     message: "Ãë¼Ò ºÎ°¡°¡Ä¡¼¼°¡ ³²Àº ºÎ°¡°¡Ä¡¼¼º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
+PRICE_PRICELICK_ERROR       code: "202"     message: "³²Àº ±Ý¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù."
+PRICE_PAYRANGE_ERROR        code: "203"     message: "ºÎ°¡°¡Ä¡¼¼°¡ °áÁ¦ ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
+PRICE_CANCELRANGE_ERROR     code: "204"     message: "ºÎ°¡°¡Ä¡¼¼°¡ Ãë¼Ò ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
+PRICE_PAYLICK_ERROR         code: "205"     message: "Ãë¼ÒÈÄ ³²Àº ºÎ°¡°¡Ä¡¼¼°¡ ³²Àº ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
+```
+* µ¿½Ã¼º ¿¡·¯
+```
+LOCK_PAYMENT_ERROR         code: "301"     message: "ÇÏ³ªÀÇ Ä«µå¹øÈ£·Î µ¿½Ã¿¡ °áÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù."
+LOCK_CANCEL_ERROR          code: "302"     message: "ÇÏ³ªÀÇ °áÁ¦Á¤º¸¸¦ µ¿½Ã¿¡ Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù."
+```
+* UniqueID »ý¼º¿¡·¯
+```
+CRT_MNGID_ERROR             code: "401"     message: "°ü¸®¹øÈ£ »ý¼º¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+CRT_TRANSACTIONID_ERROR     code: "402"     message: "Æ®·£Àè¼Ç¹øÈ£ »ý¼º¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+```
+* Ä«µåÁ¤º¸ ¾ÏÈ£È­ ¿¡·¯
+```
+CIPHER_ENCRYPT_ERROR         code: "501"     message: "Ä«µåÁ¤º¸¸¦ ¾ÏÈ£È­ÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+CIPHER_DECRYPT_ERROR         code: "502"     message: "Ä«µåÁ¤º¸¸¦ º¹È£È­ÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+```
+* Ä«µå»ç Àü¼Û ¿¡·¯
+```
+SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+```
