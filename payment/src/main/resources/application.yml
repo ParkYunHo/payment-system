@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  redis:
+    url: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+
+cipher:
+  algorithm: AES
+  secretkey: kakaopaykakaopay
+  separator: _
+  charset: UTF-8
