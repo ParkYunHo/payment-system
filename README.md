@@ -1,47 +1,47 @@
-# Ä«µå°áÁ¦ API ½Ã½ºÅÛ
+# ì¹´ë“œê²°ì œ API ì‹œìŠ¤í…œ
 
-°áÁ¦¿äÃ»À» ¹Þ¾Æ Ä«µå»ç¿Í Åë½ÅÇÏ´Â ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÏ´Â Restful API °áÁ¦½Ã½ºÅÛ 
-
-
-
-## ¸ñÀÚ
-
-* [°³¹ßÈ¯°æ](#°³¹ßÈ¯°æ)
-* [Å×ÀÌºí ¼³°è](#Å×ÀÌºí¼³°è)
-* [ºôµå ¹æ¹ý](#ºôµå¹æ¹ý)
-* [¹®Á¦ÇØ°á Àü·«](#¹®Á¦ÇØ°áÀü·«)
-* [¹æ¾îÄÚµå Áõ¸í](#¹æ¾îÄÚµåÁõ¸í)
-* [´ÜÀ§ Å×½ºÆ®](#´ÜÀ§Å×½ºÆ®)
-* [¿¡·¯ÄÚµå Á¤ÀÇ](#¿¡·¯ÄÚµåÁ¤ÀÇ)
-* [Å×½ºÆ®](#Å×½ºÆ®)
+ê²°ì œìš”ì²­ì„ ë°›ì•„ ì¹´ë“œì‚¬ì™€ í†µì‹ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•˜ëŠ” Restful API ê²°ì œì‹œìŠ¤í…œ 
 
 
 
-## °³¹ßÈ¯°æ
+## ëª©ìž
+
+* [ê°œë°œí™˜ê²½](#ê°œë°œí™˜ê²½)
+* [í…Œì´ë¸” ì„¤ê³„](#í…Œì´ë¸”ì„¤ê³„)
+* [ë¹Œë“œ ë°©ë²•](#ë¹Œë“œë°©ë²•)
+* [ë¬¸ì œí•´ê²° ì „ëžµ](#ë¬¸ì œí•´ê²°ì „ëžµ)
+* [ë°©ì–´ì½”ë“œ ì¦ëª…](#ë°©ì–´ì½”ë“œì¦ëª…)
+* [ë‹¨ìœ„ í…ŒìŠ¤íŠ¸](#ë‹¨ìœ„í…ŒìŠ¤íŠ¸)
+* [ì—ëŸ¬ì½”ë“œ ì •ì˜](#ì—ëŸ¬ì½”ë“œì •ì˜)
+* [í…ŒìŠ¤íŠ¸](#í…ŒìŠ¤íŠ¸)
+
+
+
+## ê°œë°œí™˜ê²½
 
 1. BackEnd
     * Spring boot
-       * Spring °³¹ßÈ¯°æ ±¸Ãà½Ã°£À» ÁÙÀÌ°í Embedded TomcatÀ» È°¿ëÇÏ±â À§ÇÑ ¿ëµµ
+       * Spring ê°œë°œí™˜ê²½ êµ¬ì¶•ì‹œê°„ì„ ì¤„ì´ê³  Embedded Tomcatì„ í™œìš©í•˜ê¸° ìœ„í•œ ìš©ë„
     * JPA/Hibernate
-       * ORM±â¼úÀ» È°¿ëÇÏ¿© DBÇÚµé¸µ ÆíÀÇ¼ºÀ» À§ÇØ »ç¿ë
+       * ORMê¸°ìˆ ì„ í™œìš©í•˜ì—¬ DBí•¸ë“¤ë§ íŽ¸ì˜ì„±ì„ ìœ„í•´ ì‚¬ìš©
     * Maven
-       * Build ¹× ¶óÀÌºê·¯¸® °ü¸® ¿ëµµ
+       * Build ë° ë¼ì´ë¸ŒëŸ¬ë¦¬ ê´€ë¦¬ ìš©ë„
 
 2. DB
     * H2
-       * In-memoery¹æ½ÄÀÇ °³¹ß°è È¯°æ ±¸Ãà ¿ëµµ
+       * In-memoeryë°©ì‹ì˜ ê°œë°œê³„ í™˜ê²½ êµ¬ì¶• ìš©ë„
     * Redis
-       * RedisÀÇ ¿øÀÚÀû Æ¯¼ºÀ» °®´Â ÇÔ¼ö(setIfAbsent)¸¦ ÀÌ¿ëÇÏ¿© ºÐ»êLOCKÀ» »ç¿ëÇÏ±â À§ÇÑ ¿ëµµ
+       * Redisì˜ ì›ìžì  íŠ¹ì„±ì„ ê°–ëŠ” í•¨ìˆ˜(setIfAbsent)ë¥¼ ì´ìš©í•˜ì—¬ ë¶„ì‚°LOCKì„ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ìš©ë„
 
 3. IDE
-    * SpringToolSuite4 : Spring°³¹ß È¯°æ 
-    * Insomnia : API Å×½ºÆ® ¿ëµµ
+    * SpringToolSuite4 : Springê°œë°œ í™˜ê²½ 
+    * Insomnia : API í…ŒìŠ¤íŠ¸ ìš©ë„
 
 
 
-## Å×ÀÌºí&nbsp;¼³°è
+## í…Œì´ë¸”&nbsp;ì„¤ê³„
 
-1. °áÁ¦Á¤º¸ Å×ÀÌºí
+1. ê²°ì œì •ë³´ í…Œì´ë¸”
 ```
     CREATE TABLE PAYMENT
     (
@@ -54,48 +54,48 @@
     	PAY_MNG_ID			 VARCHAR(255) NULL,
       PRIMARY KEY (MNG_ID)
     );
-    COMMENT ON TABLE PAYMENT IS '°áÁ¦Á¤º¸';
-    COMMENT ON COLUMN PAYMENT.MNG_ID IS '°ü¸®¹øÈ£';
-    COMMENT ON COLUMN PAYMENT.STATUS IS '°áÁ¦/Ãë¼Ò »óÅÂ';
-    COMMENT ON COLUMN PAYMENT.PRICE IS '°áÁ¦/Ãë¼Ò ±Ý¾×';
-    COMMENT ON COLUMN PAYMENT.VAT IS '°áÁ¦/Ãë¼Ò ºÎ°¡°¡Ä¡¼¼';
-    COMMENT ON COLUMN PAYMENT.INSTALL_MONTHS IS 'ÇÒºÎ°³¿ù¼ö';
-    COMMENT ON COLUMN PAYMENT.ENCRYPT_CARD_INFO IS '¾ÏÈ£È­µÈ Ä«µåÁ¤º¸';
+    COMMENT ON TABLE PAYMENT IS 'ê²°ì œì •ë³´';
+    COMMENT ON COLUMN PAYMENT.MNG_ID IS 'ê´€ë¦¬ë²ˆí˜¸';
+    COMMENT ON COLUMN PAYMENT.STATUS IS 'ê²°ì œ/ì·¨ì†Œ ìƒíƒœ';
+    COMMENT ON COLUMN PAYMENT.PRICE IS 'ê²°ì œ/ì·¨ì†Œ ê¸ˆì•¡';
+    COMMENT ON COLUMN PAYMENT.VAT IS 'ê²°ì œ/ì·¨ì†Œ ë¶€ê°€ê°€ì¹˜ì„¸';
+    COMMENT ON COLUMN PAYMENT.INSTALL_MONTHS IS 'í• ë¶€ê°œì›”ìˆ˜';
+    COMMENT ON COLUMN PAYMENT.ENCRYPT_CARD_INFO IS 'ì•”í˜¸í™”ëœ ì¹´ë“œì •ë³´';
 ```
 
-2. Ä«µå»ç Å×ÀÌºí
+2. ì¹´ë“œì‚¬ í…Œì´ë¸”
 ```
     CREATE TABLE CARD_COMPANY
     (
     	TRANSACTION_ID               VARCHAR(500) NOT NULL ,
       PRIMARY KEY (TRANSACTION_ID)
     );
-    COMMENT ON TABLE CARD_COMPANY IS 'Ä«µå»ç';
-    COMMENT ON COLUMN AD_DOC_INFO.TRANSACTION_ID IS 'Æ®·£Àè¼Ç ID';
+    COMMENT ON TABLE CARD_COMPANY IS 'ì¹´ë“œì‚¬';
+    COMMENT ON COLUMN AD_DOC_INFO.TRANSACTION_ID IS 'íŠ¸ëžœìž­ì…˜ ID';
 ```
 
 
 
-## ºôµå&nbsp;¹æ¹ý
+## ë¹Œë“œ&nbsp;ë°©ë²•
 
-1. Command Line ºôµå
+1. Command Line ë¹Œë“œ
     ```
     $gradlew build
     ```
 
-2. SpringToolSuite4 ºôµå
+2. SpringToolSuite4 ë¹Œë“œ
     ```
-    Application ½ÇÇà
+    Application ì‹¤í–‰
     ```
 
 
 
-## ¹®Á¦ÇØ°á&nbsp;Àü·«
+## ë¬¸ì œí•´ê²°&nbsp;ì „ëžµ
 
-#### 1. ÀúÀåÇÏ´Â String µ¥ÀÌÅÍ (Æ®·£Àè¼ÇID)
+#### 1. ì €ìž¥í•˜ëŠ” String ë°ì´í„° (íŠ¸ëžœìž­ì…˜ID)
 
- * »ý¼º¹æ½Ä
-     * __StringBuffer__¸¦ È°¿ëÇÏ¿© mutable Object ¹æ½ÄÀ¸·Î ±¸Çö(Threadsafe)
+ * ìƒì„±ë°©ì‹
+     * __StringBuffer__ ë¥¼ í™œìš©í•˜ì—¬ mutable Object ë°©ì‹ìœ¼ë¡œ êµ¬í˜„(Threadsafe)
 
 ~~~java
 return new StringBuffer()
@@ -114,8 +114,8 @@ return new StringBuffer()
 	.toString();
 ~~~
 
- * µ¥ÀÌÅÍÅ¸ÀÔ Á¤ÀÇ
-   * __String.format__À» ÅëÇÑ µ¥ÀÌÅÍÅ¸ÀÔ ¼±Á¤ÀÇ
+ * ë°ì´í„°íƒ€ìž… ì •ì˜
+   * __String.format__ ì„ í†µí•œ ë°ì´í„°íƒ€ìž… ì„ ì •ì˜
 
 ~~~java
 switch(type) {
@@ -134,44 +134,44 @@ switch(type) {
 
 
 
-#### 2. ºÎ°¡°¡Ä¡¼¼
+#### 2. ë¶€ê°€ê°€ì¹˜ì„¸
 
-* ºÎ°¡°¡Ä¡¼¼ ÀÚµ¿°è»ê
+* ë¶€ê°€ê°€ì¹˜ì„¸ ìžë™ê³„ì‚°
 
-  * ±âº»ÀûÀ¸·Î »ïÇ×¿¬»êÀÚ¸¦ È°¿ëÇÏ¿© ºÎ°¡°¡Ä¡¼¼ ÀÚµ¿ °è»ê
+  * ê¸°ë³¸ì ìœ¼ë¡œ ì‚¼í•­ì—°ì‚°ìžë¥¼ í™œìš©í•˜ì—¬ ë¶€ê°€ê°€ì¹˜ì„¸ ìžë™ ê³„ì‚°
 
   ~~~java
   return vat == null ? Math.round(price/11) : vat;    
   ~~~
 
-    * °áÁ¦Ãë¼Ò½Ã ³²Àº±Ý¾×ÀÌ ¾ø°Å³ª Request¹ÞÀº ºÎ°¡°¡Ä¡¼¼°¡ ¾ø´Â °æ¿ì ÀÚµ¿À¸·Î ³²Àº ºÎ°¡°¡Ä¡¼¼·Î È¯»ê
+    * ê²°ì œì·¨ì†Œì‹œ ë‚¨ì€ê¸ˆì•¡ì´ ì—†ê±°ë‚˜ Requestë°›ì€ ë¶€ê°€ê°€ì¹˜ì„¸ê°€ ì—†ëŠ” ê²½ìš° ìžë™ìœ¼ë¡œ ë‚¨ì€ ë¶€ê°€ê°€ì¹˜ì„¸ë¡œ í™˜ì‚°
 
   ~~~java
   if(remainPrice == 0 && cancelInfo.getVat() == null)
   	return payment.getVat();
   ~~~
 
-* ºÎ°¡°¡Ä¡¼¼ ¹üÀ§Á¦ÇÑ
+* ë¶€ê°€ê°€ì¹˜ì„¸ ë²”ìœ„ì œí•œ
 
-  * __ValidationService.java__ °ËÁõService¿¡¼­ ºÎ°¡°¡Ä¡¼¼¿¡ ´ëÇÑ À¯È¿¼º Ã¼Å©
+  * __ValidationService.java__ ê²€ì¦Serviceì—ì„œ ë¶€ê°€ê°€ì¹˜ì„¸ì— ëŒ€í•œ ìœ íš¨ì„± ì²´í¬
 
-  * Caseº° ¿¹¿ÜÃ³¸®
+  * Caseë³„ ì˜ˆì™¸ì²˜ë¦¬
 
-    * case #1. °áÁ¦Ãë¼Ò ±Ý¾×º¸´Ù °áÁ¦VAT°¡ ´õ Å« °æ¿ì
+    * case #1. ê²°ì œì·¨ì†Œ ê¸ˆì•¡ë³´ë‹¤ ê²°ì œVATê°€ ë” í° ê²½ìš°
 
     ~~~java
     if(cancelInfo.getPrice() < cancelInfo.getVat())
     	throw new CustomException(ExceptionType.PRICE_CANCELRANGE_ERROR);
     ~~~
 
-    * case #2. ³²Àº VATº¸´Ù °áÁ¦Ãë¼Ò VAT°¡ ´õ Å« °æ¿ì
+    * case #2. ë‚¨ì€ VATë³´ë‹¤ ê²°ì œì·¨ì†Œ VATê°€ ë” í° ê²½ìš°
 
     ~~~java
     if(cancelInfo.getVat() > payment.getVat())
     	throw new CustomException(ExceptionType.PRICE_VATRANGE_ERROR);
     ~~~
 
-    * case #3. °áÁ¦Ãë¼Ò½Ã ³²Àº ±Ý¾×º¸´Ù ³²Àº VAT°¡ ´õ Å« °æ¿ì
+    * case #3. ê²°ì œì·¨ì†Œì‹œ ë‚¨ì€ ê¸ˆì•¡ë³´ë‹¤ ë‚¨ì€ VATê°€ ë” í° ê²½ìš°
 
     ~~~java
     Long remainPrice = payment.getPrice() - cancelInfo.getPrice();
@@ -182,13 +182,13 @@ switch(type) {
 
     
 
-#### 3. Ä«µåÁ¤º¸
+#### 3. ì¹´ë“œì •ë³´
 
-* ¾ÏÈ£È­/º¹È£È­ ¹æ½Ä
+* ì•”í˜¸í™”/ë³µí˜¸í™” ë°©ì‹
 
-  * __javax.crypto.Cipher__ ¶óÀÌºê·¯¸® È°¿ë
-  * __AES__ : ¾ÏÈ£È­ ¾Ë°í¸®Áò
-  * __±¸ºÐÀÚ__ : "_"(¾ð´õ¹Ù)
+  * __javax.crypto.Cipher__ ë¼ì´ë¸ŒëŸ¬ë¦¬ í™œìš©
+  * __AES__ : ì•”í˜¸í™” ì•Œê³ ë¦¬ì¦˜
+  * __êµ¬ë¶„ìž__ : "_"(ì–¸ë”ë°”)
 
   ~~~properties
   cipher:
@@ -198,28 +198,28 @@ switch(type) {
     charset: UTF-8
   ~~~
 
-* ¾ÏÈ£È­
+* ì•”í˜¸í™”
 
-  * Ä«µå¹øÈ£, À¯È¿±â°£, CVCÁ¤º¸¸¦ ±¸ºÐÀÚ("_")·Î ¿¬°áÇÏ¿© ¹®ÀÚ¿­·Î ÀúÀå
-  * __cipher.doFinal__ ¸Þ¼­µå¸¦ ÅëÇØ ¹®ÀÚ¿­À» ¹ÙÀÌÆ® ¹è¿­·Î º¯È¯
-  * __Base64.encodeBase64__ ¸Þ¼­µå¸¦ ÅëÇØ UTF-8 CharsetÀ¸·Î º¯È¯
+  * ì¹´ë“œë²ˆí˜¸, ìœ íš¨ê¸°ê°„, CVCì •ë³´ë¥¼ êµ¬ë¶„ìž("_")ë¡œ ì—°ê²°í•˜ì—¬ ë¬¸ìžì—´ë¡œ ì €ìž¥
+  * __cipher.doFinal__ ë©”ì„œë“œë¥¼ í†µí•´ ë¬¸ìžì—´ì„ ë°”ì´íŠ¸ ë°°ì—´ë¡œ ë³€í™˜
+  * __Base64.encodeBase64__ ë©”ì„œë“œë¥¼ í†µí•´ UTF-8 Charsetìœ¼ë¡œ ë³€í™˜
 
   ~~~java
   return new String(Base64.encodeBase64(cipher.doFinal(combineCardInfo.getBytes())), charset);
   ~~~
 
-* º¹È£È­
+* ë³µí˜¸í™”
 
-  * ¾ÏÈ£È­ÀÇ ¹Ý´ë¼ø¼­·Î º¹È£È­ (decodeBase64 > cipher.doFinal)
-  * __split__ ±â´ÉÀ» ÅëÇØ º¹È£È­µÈ ¹®ÀÚ¿­À» ±¸ºÐÀÚ·Î ³ª´©¾î String¹è¿­·Î º¯È¯
+  * ì•”í˜¸í™”ì˜ ë°˜ëŒ€ìˆœì„œë¡œ ë³µí˜¸í™” (decodeBase64 > cipher.doFinal)
+  * __split__ ê¸°ëŠ¥ì„ í†µí•´ ë³µí˜¸í™”ëœ ë¬¸ìžì—´ì„ êµ¬ë¶„ìžë¡œ ë‚˜ëˆ„ì–´ Stringë°°ì—´ë¡œ ë³€í™˜
 
   ~~~java
   byte[] encryptBytes = Base64.decodeBase64(encryptCardInfo.getBytes());			String splits[] = new String(cipher.doFinal(encryptBytes), charset).split(separator);
   ~~~
 
-* ¸¶½ºÅ·
+* ë§ˆìŠ¤í‚¹
 
-  * __StringBuilder__ ¸¦ È°¿ëÇÏ¿© ¾Õ 6ÀÚ¸®, µÚ 3ÀÚ¸®¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö Ä«µåÁ¤º¸ ¸¶½ºÅ·
+  * __StringBuilder__ ë¥¼ í™œìš©í•˜ì—¬ ì•ž 6ìžë¦¬, ë’¤ 3ìžë¦¬ë¥¼ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ì¹´ë“œì •ë³´ ë§ˆìŠ¤í‚¹
   
   ~~~java
   return new StringBuilder()
@@ -231,12 +231,12 @@ switch(type) {
   
   
 
-#### 4. Æ®·£Àè¼Ç °ü¸®
+#### 4. íŠ¸ëžœìž­ì…˜ ê´€ë¦¬
 
-* °ü¸®¹øÈ£ »ý¼º¹æ½Ä
+* ê´€ë¦¬ë²ˆí˜¸ ìƒì„±ë°©ì‹
 
-  * Æ®·£Àè¼ÇÀÌ ¹ß»ýÇÑ ³¯Â¥½Ã°£°ú ³­¼ö¸¦ Á¶ÇÕÇÏ¿© °ü¸®¹øÈ£ »ý¼º
-  * __RandomStringUtils.random__ ¸Þ¼­µå¸¦ È°¿ëÇÏ¿© ³­¼ö »ý¼º
+  * íŠ¸ëžœìž­ì…˜ì´ ë°œìƒí•œ ë‚ ì§œì‹œê°„ê³¼ ë‚œìˆ˜ë¥¼ ì¡°í•©í•˜ì—¬ ê´€ë¦¬ë²ˆí˜¸ ìƒì„±
+  * __RandomStringUtils.random__ ë©”ì„œë“œë¥¼ í™œìš©í•˜ì—¬ ë‚œìˆ˜ ìƒì„±
 
   ~~~java
   return new StringBuffer()
@@ -246,10 +246,10 @@ switch(type) {
 
   
 
-* °áÁ¦Á¤º¸¿Í °áÁ¦Ãë¼ÒÁ¤º¸ ¿¬°á (Self-Join)
+* ê²°ì œì •ë³´ì™€ ê²°ì œì·¨ì†Œì •ë³´ ì—°ê²° (Self-Join)
 
-  * __payMngId__ ÄÃ·³À» ÅëÇØ SELF-JOIN °ü°è ¼³Á¤
-  * °áÁ¦Ãë¼Ò Æ®·£Àè¼ÇÀÎ °æ¿ì __payMngId__ ÄÃ·³¿¡ °áÁ¦ Æ®·£Àè¼Ç °ü¸®¹øÈ£ ÀúÀå (°áÁ¦ Æ®·£Àè¼ÇÀº null°ª ÀúÀå)
+  * __payMngId__ ì»¬ëŸ¼ì„ í†µí•´ SELF-JOIN ê´€ê³„ ì„¤ì •
+  * ê²°ì œì·¨ì†Œ íŠ¸ëžœìž­ì…˜ì¸ ê²½ìš° __payMngId__ ì»¬ëŸ¼ì— ê²°ì œ íŠ¸ëžœìž­ì…˜ ê´€ë¦¬ë²ˆí˜¸ ì €ìž¥ (ê²°ì œ íŠ¸ëžœìž­ì…˜ì€ nullê°’ ì €ìž¥)
 
   ~~~java
   @OneToMany(mappedBy="payMngId")
@@ -262,59 +262,59 @@ switch(type) {
   
 
 
-## ¹æ¾îÄÚµå&nbsp;Áõ¸í
-#### 1. µ¿½Ã¼º Á¦¾î¸¦ À§ÇÑ °øÅë±â´É
-* UniqueKey »ý¼º±â´É
- * °áÁ¦ &emsp;&emsp;: &emsp;type : ```Payment``` &emsp;/&emsp;value : ```Ä«µå¹øÈ£```
- * °áÁ¦Ãë¼Ò : &emsp;type : ```Cancel``` &emsp;/ &emsp;value : ```°ü¸®¹øÈ£```
+## ë°©ì–´ì½”ë“œ&nbsp;ì¦ëª…
+#### 1. ë™ì‹œì„± ì œì–´ë¥¼ ìœ„í•œ ê³µí†µê¸°ëŠ¥
+* UniqueKey ìƒì„±ê¸°ëŠ¥
+ * ê²°ì œ &emsp;&emsp;: &emsp;type : ```Payment``` &emsp;/&emsp;value : ```ì¹´ë“œë²ˆí˜¸```
+ * ê²°ì œì·¨ì†Œ : &emsp;type : ```Cancel``` &emsp;/ &emsp;value : ```ê´€ë¦¬ë²ˆí˜¸```
 ```java
 String.format("%s::%s", type, value.toString());
 ```
 
-* Æ®·£Àè¼Ç Lock
- * setIfAbsent() ÇÔ¼ö¸¦ ÅëÇØ ÀÌ¹Ì UniqueKey°¡ µî·ÏµÇ¾ú´Ù¸é ¿¡·¯Á¤º¸ throw
- * °áÁ¦/°áÁ¦Ãë¼Ò Æ®·£Àè¼Ç¿¡ ´ëÇÑ °íÀ¯Á¤º¸·Î UniqueKey¸¦ ±¸¼ºÇÏ±â ¶§¹®¿¡ ºÐ»êLock ±¸Çö °¡´É
+* íŠ¸ëžœìž­ì…˜ Lock
+ * setIfAbsent() í•¨ìˆ˜ë¥¼ í†µí•´ ì´ë¯¸ UniqueKeyê°€ ë“±ë¡ë˜ì—ˆë‹¤ë©´ ì—ëŸ¬ì •ë³´ throw
+ * ê²°ì œ/ê²°ì œì·¨ì†Œ íŠ¸ëžœìž­ì…˜ì— ëŒ€í•œ ê³ ìœ ì •ë³´ë¡œ UniqueKeyë¥¼ êµ¬ì„±í•˜ê¸° ë•Œë¬¸ì— ë¶„ì‚°Lock êµ¬í˜„ ê°€ëŠ¥
 ```java
  boolean isUnLocked = redisTemplate.opsForValue().setIfAbsent(uniqueKey, "LOCK", 1, TimeUnit.MINUTES);
  if(isUnLocked == false)
 	 throw new CustomException(ExceptionType.LOCK_CANCEL_ERROR);
 ```
 
-* Æ®·£Àè¼Ç Unlock
- * Redis¿¡ µî·ÏÇÑ LockÁ¤º¸ »èÁ¦
+* íŠ¸ëžœìž­ì…˜ Unlock
+ * Redisì— ë“±ë¡í•œ Lockì •ë³´ ì‚­ì œ
 ```java
 redisTemplate.delete(uniqueKey);
 ```
 
-#### 2. ÇÏ³ªÀÇ Ä«µå¹øÈ£·Î µ¿½Ã¿¡ °áÁ¦½Ã ¹æ¾îÄÚµå
- * ```getUniqueKey``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ UniqueKey¸¦ ¹ß±Þ¹Þ´Â´Ù.
- * ```paymentLock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °áÁ¦Process ½ÃÀÛÀü LockÀ» °É¾îµÐ´Ù.
+#### 2. í•˜ë‚˜ì˜ ì¹´ë“œë²ˆí˜¸ë¡œ ë™ì‹œì— ê²°ì œì‹œ ë°©ì–´ì½”ë“œ
+ * ```getUniqueKey``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´ UniqueKeyë¥¼ ë°œê¸‰ë°›ëŠ”ë‹¤.
+ * ```paymentLock``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´ ê²°ì œProcess ì‹œìž‘ì „ Lockì„ ê±¸ì–´ë‘”ë‹¤.
 ```java
  paymentKey = lockProvider.getUniqueKey(PaymentType.PAYMENT, paymentInfo.getCardNo());
  lockProvider.paymentLock(paymentKey);
 ```
- * °áÁ¦ Process°¡ ¿Ï·áµÇ¸é ```unlock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ  °É¾îµÎ¾ú´ø LockÀ» ÇØÁ¦ÇÑ´Ù.
+ * ê²°ì œ Processê°€ ì™„ë£Œë˜ë©´ ```unlock``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´  ê±¸ì–´ë‘ì—ˆë˜ Lockì„ í•´ì œí•œë‹¤.
 ```java
  lockProvider.unlock(paymentKey);
 ```
 
-#### 3. °áÁ¦ ÇÑ °Ç¿¡ ´ëÇÑ ÀüÃ¼Ãë¼Ò(ºÎºÐÃë¼Ò)½Ã ¹æ¾îÄÚµå
-###### _ÀüÃ¼Ãë¼Ò¿Í ºÎºÐÃë¼Ò ±â´ÉÀ» ÇÏ³ªÀÇ ¸Þ¼­µå·Î ±¸ÇöÇÏ¿© º°µµÀÇ ±¸ºÐ¾øÀÌ ¹æ¾îÄÚµå ÀÛ¼º_
- * ```getUniqueKey``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ UniqueKey¸¦ ¹ß±Þ¹Þ´Â´Ù.
- * ```paymentLock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °áÁ¦Ãë¼Ò Process ½ÃÀÛÀü LockÀ» °É¾îµÐ´Ù.
+#### 3. ê²°ì œ í•œ ê±´ì— ëŒ€í•œ ì „ì²´ì·¨ì†Œ(ë¶€ë¶„ì·¨ì†Œ)ì‹œ ë°©ì–´ì½”ë“œ
+###### _ì „ì²´ì·¨ì†Œì™€ ë¶€ë¶„ì·¨ì†Œ ê¸°ëŠ¥ì„ í•˜ë‚˜ì˜ ë©”ì„œë“œë¡œ êµ¬í˜„í•˜ì—¬ ë³„ë„ì˜ êµ¬ë¶„ì—†ì´ ë°©ì–´ì½”ë“œ ìž‘ì„±_
+ * ```getUniqueKey``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´ UniqueKeyë¥¼ ë°œê¸‰ë°›ëŠ”ë‹¤.
+ * ```paymentLock``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´ ê²°ì œì·¨ì†Œ Process ì‹œìž‘ì „ Lockì„ ê±¸ì–´ë‘”ë‹¤.
 ```java
  cancelKey = lockProvider.getUniqueKey(PaymentType.CANCEL, cancelInfo.getMngId());
  lockProvider.cancelLock(cancelKey);
 ```
- * °áÁ¦Ãë¼Ò Process°¡ ¿Ï·áµÇ¸é ```unlock``` °øÅë±â´É ÇÔ¼ö¸¦ ÅëÇØ °É¾îµÎ¾ú´ø LockÀ» ÇØÁ¦ÇÑ´Ù.
+ * ê²°ì œì·¨ì†Œ Processê°€ ì™„ë£Œë˜ë©´ ```unlock``` ê³µí†µê¸°ëŠ¥ í•¨ìˆ˜ë¥¼ í†µí•´ ê±¸ì–´ë‘ì—ˆë˜ Lockì„ í•´ì œí•œë‹¤.
 ```java
  lockProvider.unlock(cancelKey);
 ```
 
-#### 4. ¹æ¾îÄÚµå Áõ¸í
- * Junit Test¸¦ ÅëÇØ ¹æ¾îÄÚµå¸¦ Áõ¸í
- * Multi-Thread¸¦ »ý¼ºÇÏ¿© µ¿½Ã¿¡ °áÁ¦ ¶Ç´Â °áÁ¦Ãë¼Ò ¸Þ¼­µå¿¡ Á¢±ÙÇÏ¿© LOCK¿¡ ÀÇÇÑ ExceptionÀÌ ResponseµÇ´ÂÁö È®ÀÎ
- * Multi-Thread ±¸¼º
+#### 4. ë°©ì–´ì½”ë“œ ì¦ëª…
+ * Junit Testë¥¼ í†µí•´ ë°©ì–´ì½”ë“œë¥¼ ì¦ëª…
+ * Multi-Threadë¥¼ ìƒì„±í•˜ì—¬ ë™ì‹œì— ê²°ì œ ë˜ëŠ” ê²°ì œì·¨ì†Œ ë©”ì„œë“œì— ì ‘ê·¼í•˜ì—¬ LOCKì— ì˜í•œ Exceptionì´ Responseë˜ëŠ”ì§€ í™•ì¸
+ * Multi-Thread êµ¬ì„±
 ```java
 Runnable thread = () -> {
 		try {
@@ -333,94 +333,94 @@ CompletableFuture
 
 
 
-## ´ÜÀ§&nbsp;Å×½ºÆ®
+## ë‹¨ìœ„&nbsp;í…ŒìŠ¤íŠ¸
 
-* Junit5 ¹öÀü»ç¿ë
-* TestCaseº° ¼³¸í
- * TestCase¿¡ ÇÊ¿äÇÑ °øÅëÁ¤º¸(Request Parameter, IDÁ¤º¸ µî) Á¦°ø
+* Junit5 ë²„ì „ì‚¬ìš©
+* TestCaseë³„ ì„¤ëª…
+ * TestCaseì— í•„ìš”í•œ ê³µí†µì •ë³´(Request Parameter, IDì •ë³´ ë“±) ì œê³µ
 ```
 CommonTest.java
 ```
- * °áÁ¦, °áÁ¦Ãë¼Ò, °áÁ¦Á¤º¸ Á¶È¸ TestCase
+ * ê²°ì œ, ê²°ì œì·¨ì†Œ, ê²°ì œì •ë³´ ì¡°íšŒ TestCase
 ```
 PaymentTest.java
 ```
- * ¿¹¿Ü »óÈ²º° TestCase
+ * ì˜ˆì™¸ ìƒí™©ë³„ TestCase
 ```
 ExceptionTest.java
 ```
- * µ¿½Ã¼ºÁ¦¾î TestCase
+ * ë™ì‹œì„±ì œì–´ TestCase
 ```
 MultiThreadTest.java
 ```
 
 
 
-## ¿¡·¯ÄÚµå&nbsp;Á¤ÀÇ
+## ì—ëŸ¬ì½”ë“œ&nbsp;ì •ì˜
 
-1. ¿¡·¯»óÈ²½Ã Response Object
+1. ì—ëŸ¬ìƒí™©ì‹œ Response Object
 ```json
 {
         "timeStamp": YYYY-MM-DD HH-MM-SS,
-        "status": ¿¡·¯ÄÚµå,
-        "msg": ¿¡·¯¸Þ¼¼Áö
+        "status": ì—ëŸ¬ì½”ë“œ,
+        "msg": ì—ëŸ¬ë©”ì„¸ì§€
 }
 ```
 
-2. ¿¡·¯ÄÚµå Á¤ÀÇ
+2. ì—ëŸ¬ì½”ë“œ ì •ì˜
 
-###### _º¸¾È»ó ¿¡·¯ÄÚµå´Â »ó¼¼È÷ Á¦°øÇÏÁö ¾Ê´Â °ÍÀÌ ¿øÄ¢ÀÌÁö¸¸ °áÁ¦½Ã½ºÅÛ »ó¿¡´Â »ó¼¼È÷ Ç¥Çö_
+###### _ë³´ì•ˆìƒ ì—ëŸ¬ì½”ë“œëŠ” ìƒì„¸ížˆ ì œê³µí•˜ì§€ ì•ŠëŠ” ê²ƒì´ ì›ì¹™ì´ì§€ë§Œ ê²°ì œì‹œìŠ¤í…œ ìƒì—ëŠ” ìƒì„¸ížˆ í‘œí˜„_
 
-* ¼­¹ö ³»ºÎ¿¡·¯
+* ì„œë²„ ë‚´ë¶€ì—ëŸ¬
 ```json
-SERVER_ERROR            code: "001"     message: "¿¡·¯"
+SERVER_ERROR            code: "001"     message: "ì—ëŸ¬"
 ```
-* Request Parameter ¿¡·¯
+* Request Parameter ì—ëŸ¬
 ```json
-PARAM_NULL_ERROR        code: "101"     message: "ÇÊ¼ö ¿äÃ»Á¤º¸¸¦ ´©¶ôÇÏ¿´½À´Ï´Ù."
-PARAM_LENS_ERROR        code: "102"     message: "Çã¿ëµÈ ±æÀÌ¸¦ ¹þ¾î³µ½À´Ï´Ù."
-PARAM_DATE_ERROR        code: "103"     message: "³¯Â¥Çü½ÄÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù."
-PARAM_RANGE_ERROR       code: "104"     message: "Çã¿ëµÈ °ªÀÇ ¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù."
-PARAM_NOID_ERROR        code: "105"     message: "Á¸ÀçÇÏÁö ¾Ê´Â °ü¸®¹øÈ£ÀÔ´Ï´Ù."
-PARAM_NOPAY_ERROR       code: "106"     message: "°áÀçÁ¤º¸°¡ ¾ø´Â °ü¸®¹øÈ£ÀÔ´Ï´Ù."
+PARAM_NULL_ERROR        code: "101"     message: "í•„ìˆ˜ ìš”ì²­ì •ë³´ë¥¼ ëˆ„ë½í•˜ì˜€ìŠµë‹ˆë‹¤."
+PARAM_LENS_ERROR        code: "102"     message: "í—ˆìš©ëœ ê¸¸ì´ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤."
+PARAM_DATE_ERROR        code: "103"     message: "ë‚ ì§œí˜•ì‹ì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤."
+PARAM_RANGE_ERROR       code: "104"     message: "í—ˆìš©ëœ ê°’ì˜ ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤."
+PARAM_NOID_ERROR        code: "105"     message: "ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ê´€ë¦¬ë²ˆí˜¸ìž…ë‹ˆë‹¤."
+PARAM_NOPAY_ERROR       code: "106"     message: "ê²°ìž¬ì •ë³´ê°€ ì—†ëŠ” ê´€ë¦¬ë²ˆí˜¸ìž…ë‹ˆë‹¤."
 ```
-* °¡°Ý °ËÁõ ¿¡·¯
+* ê°€ê²© ê²€ì¦ ì—ëŸ¬
 ```json
-PRICE_VATRANGE_ERROR        code: "201"     message: "Ãë¼Ò ºÎ°¡°¡Ä¡¼¼°¡ ³²Àº ºÎ°¡°¡Ä¡¼¼º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
-PRICE_PRICELICK_ERROR       code: "202"     message: "³²Àº ±Ý¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù."
-PRICE_PAYRANGE_ERROR        code: "203"     message: "ºÎ°¡°¡Ä¡¼¼°¡ °áÁ¦ ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
-PRICE_CANCELRANGE_ERROR     code: "204"     message: "ºÎ°¡°¡Ä¡¼¼°¡ Ãë¼Ò ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
-PRICE_PAYLICK_ERROR         code: "205"     message: "Ãë¼ÒÈÄ ³²Àº ºÎ°¡°¡Ä¡¼¼°¡ ³²Àº ±Ý¾×º¸´Ù Å¬ ¼ö ¾ø½À´Ï´Ù."
+PRICE_VATRANGE_ERROR        code: "201"     message: "ì·¨ì†Œ ë¶€ê°€ê°€ì¹˜ì„¸ê°€ ë‚¨ì€ ë¶€ê°€ê°€ì¹˜ì„¸ë³´ë‹¤ í´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+PRICE_PRICELICK_ERROR       code: "202"     message: "ë‚¨ì€ ê¸ˆì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤."
+PRICE_PAYRANGE_ERROR        code: "203"     message: "ë¶€ê°€ê°€ì¹˜ì„¸ê°€ ê²°ì œ ê¸ˆì•¡ë³´ë‹¤ í´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+PRICE_CANCELRANGE_ERROR     code: "204"     message: "ë¶€ê°€ê°€ì¹˜ì„¸ê°€ ì·¨ì†Œ ê¸ˆì•¡ë³´ë‹¤ í´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+PRICE_PAYLICK_ERROR         code: "205"     message: "ì·¨ì†Œí›„ ë‚¨ì€ ë¶€ê°€ê°€ì¹˜ì„¸ê°€ ë‚¨ì€ ê¸ˆì•¡ë³´ë‹¤ í´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
 ```
-* µ¿½Ã¼º ¿¡·¯
+* ë™ì‹œì„± ì—ëŸ¬
 ```json
-LOCK_PAYMENT_ERROR         code: "301"     message: "ÇÏ³ªÀÇ Ä«µå¹øÈ£·Î µ¿½Ã¿¡ °áÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù."
-LOCK_CANCEL_ERROR          code: "302"     message: "ÇÏ³ªÀÇ °áÁ¦Á¤º¸¸¦ µ¿½Ã¿¡ Ãë¼ÒÇÒ ¼ö ¾ø½À´Ï´Ù."
+LOCK_PAYMENT_ERROR         code: "301"     message: "í•˜ë‚˜ì˜ ì¹´ë“œë²ˆí˜¸ë¡œ ë™ì‹œì— ê²°ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+LOCK_CANCEL_ERROR          code: "302"     message: "í•˜ë‚˜ì˜ ê²°ì œì •ë³´ë¥¼ ë™ì‹œì— ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
 ```
-* UniqueID »ý¼º¿¡·¯
+* UniqueID ìƒì„±ì—ëŸ¬
 ```json
-CRT_MNGID_ERROR             code: "401"     message: "°ü¸®¹øÈ£ »ý¼º¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-CRT_TRANSACTIONID_ERROR     code: "402"     message: "Æ®·£Àè¼Ç¹øÈ£ »ý¼º¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+CRT_MNGID_ERROR             code: "401"     message: "ê´€ë¦¬ë²ˆí˜¸ ìƒì„±ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+CRT_TRANSACTIONID_ERROR     code: "402"     message: "íŠ¸ëžœìž­ì…˜ë²ˆí˜¸ ìƒì„±ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
 ```
-* Ä«µåÁ¤º¸ ¾ÏÈ£È­ ¿¡·¯
+* ì¹´ë“œì •ë³´ ì•”í˜¸í™” ì—ëŸ¬
 ```json
-CIPHER_ENCRYPT_ERROR         code: "501"     message: "Ä«µåÁ¤º¸¸¦ ¾ÏÈ£È­ÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-CIPHER_DECRYPT_ERROR         code: "502"     message: "Ä«µåÁ¤º¸¸¦ º¹È£È­ÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+CIPHER_ENCRYPT_ERROR         code: "501"     message: "ì¹´ë“œì •ë³´ë¥¼ ì•”í˜¸í™”í•˜ëŠ”ë° ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+CIPHER_DECRYPT_ERROR         code: "502"     message: "ì¹´ë“œì •ë³´ë¥¼ ë³µí˜¸í™”í•˜ëŠ”ë° ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
 ```
-* Ä«µå»ç Àü¼Û ¿¡·¯
+* ì¹´ë“œì‚¬ ì „ì†¡ ì—ëŸ¬
 ```json
-SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´Âµ¥ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+SEND_TRANSACTION_ERROR         code: "601"     message: "ì¹´ë“œì‚¬ì— ì •ë³´ë¥¼ ì „ì†¡í•˜ëŠ”ë° ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
 ```
 
 
 
-# Å×½ºÆ®
+# í…ŒìŠ¤íŠ¸
 
-#### 1. ÀüÃ¼Ãë¼Ò Å×½ºÆ®
+#### 1. ì „ì²´ì·¨ì†Œ í…ŒìŠ¤íŠ¸
 
-* °áÁ¦ Å×½ºÆ®
+* ê²°ì œ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦ Request
+  * ê²°ì œ Request
 
   ~~~json
   POST 	/payment
@@ -434,7 +434,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-  * °áÁ¦ Response
+  * ê²°ì œ Response
 
   ~~~json
   {
@@ -443,9 +443,9 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-* °áÁ¦Ãë¼Ò Å×½ºÆ®
+* ê²°ì œì·¨ì†Œ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦Ãë¼Ò Request
+  * ê²°ì œì·¨ì†Œ Request
 
   ~~~json
   PUT 	/payment
@@ -456,7 +456,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-  * °áÁ¦Ãë¼Ò Response
+  * ê²°ì œì·¨ì†Œ Response
 
   ~~~json
   {
@@ -465,9 +465,9 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-* °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Å×½ºÆ®
+* ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Request
+  * ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ Request
 
   ~~~json
   GET 	/payment
@@ -476,7 +476,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
   
-  * °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Response
+  * ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ Response
   
   ~~~json
   {
@@ -496,11 +496,11 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   
   
 
-#### 2. ºÎºÐÃë¼Ò Å×½ºÆ®
+#### 2. ë¶€ë¶„ì·¨ì†Œ í…ŒìŠ¤íŠ¸
 
-* °áÁ¦ Å×½ºÆ®
+* ê²°ì œ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦ Request
+  * ê²°ì œ Request
 
   ~~~json
   POST 	/payment
@@ -514,7 +514,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-  * °áÁ¦ Response
+  * ê²°ì œ Response
 
   ~~~json
   {
@@ -523,9 +523,9 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-* °áÁ¦Ãë¼Ò Å×½ºÆ®
+* ê²°ì œì·¨ì†Œ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦Ãë¼Ò Request
+  * ê²°ì œì·¨ì†Œ Request
 
   ~~~json
   PUT 	/payment
@@ -536,7 +536,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-  * °áÁ¦Ãë¼Ò Response
+  * ê²°ì œì·¨ì†Œ Response
 
   ~~~json
   {
@@ -545,9 +545,9 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-* °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Å×½ºÆ®
+* ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ í…ŒìŠ¤íŠ¸
 
-  * °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Request
+  * ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ Request
 
   ~~~json
   GET 	/payment
@@ -556,7 +556,7 @@ SEND_TRANSACTION_ERROR         code: "601"     message: "Ä«µå»ç¿¡ Á¤º¸¸¦ Àü¼ÛÇÏ´
   }
   ~~~
 
-  * °áÁ¦/°áÁ¦Ãë¼Ò Á¶È¸ Response
+  * ê²°ì œ/ê²°ì œì·¨ì†Œ ì¡°íšŒ Response
 
   ~~~json
   {
