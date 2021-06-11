@@ -79,13 +79,21 @@ public class CardInfoProvider {
 	}
 	
 	public String maskingCardNo(String cardNo) {
-		 int start = 6;
-	     int end = cardNo.length()-3;
-	        
+		int forward = 6;
+		int backward = 3;
+		
 		return new StringBuilder()
-                .append(StringUtils.repeat('*', 6))
-                .append(StringUtils.substring(cardNo, start, end))
-                .append(StringUtils.repeat('*', 3))
-                .toString();
+				.append(StringUtils.substring(cardNo, 0, forward))
+				.append(StringUtils.repeat('*', cardNo.length()-forward-backward))
+				.append(StringUtils.substring(cardNo, cardNo.length()-backward, cardNo.length()))
+				.toString();
+//		 int start = 6;
+//	     int end = cardNo.length()-3;
+//	        
+//		return new StringBuilder()
+//                .append(StringUtils.repeat('*', 6))
+//                .append(StringUtils.substring(cardNo, start, end))
+//                .append(StringUtils.repeat('*', 3))
+//                .toString();
 	}
 }
